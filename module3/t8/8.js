@@ -28,6 +28,7 @@ function n2() {
 }
 function operationSelect() {
     mode = document.getElementById("operation").value
+    console.log(mode)
  
 }
 function calculate() {
