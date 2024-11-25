@@ -1,4 +1,6 @@
 'use strict';
+const target = document.querySelector('#target')
+
 const students = [
   {
     name: 'John',
@@ -13,3 +15,13 @@ const students = [
     id: '5423679',
   },
 ];
+
+for (let i = 0; i < students.length; i++) {
+  let element = document.createElement('option')
+  const name = document.createTextNode(students[i].name)
+  element.value = students[i].id
+
+  element.append(name)
+  target.appendChild(element);
+
+}

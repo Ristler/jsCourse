@@ -1,4 +1,7 @@
 'use strict';
+const target = document.querySelector('#pictures')
+
+
 const picArray = [
   {
     title: 'Title 1',
@@ -91,5 +94,33 @@ const picArray = [
     },
   },
 ];
-
 // add your code here
+for (let i = 0; i < picArray.length; i++) {
+
+  let article = document.createElement('article')
+  let headingElement = document.createElement('h2');
+  let figureElement = document.createElement('figure')
+  let imageElement = document.createElement('img');
+  let figcaptionElement = document.createElement('figcaption')
+  let descriptionElement = document.createElement('p')
+  
+  let heading = document.createTextNode(picArray[i].title)
+  imageElement.src = picArray[i].image.medium;
+  imageElement.alt = picArray[i].title
+
+  let figcaption = document.createTextNode(picArray[i].caption)
+  let description = document.createTextNode(picArray[i].description)
+
+  figcaptionElement.append(figcaption)
+  headingElement.append(heading)
+  figureElement.append(imageElement)
+  figureElement.append(figcaptionElement)
+  descriptionElement.append(description)
+  
+  article.append(headingElement)
+  article.append(figureElement)
+  article.append(descriptionElement)
+
+  target.appendChild(article)
+
+}
