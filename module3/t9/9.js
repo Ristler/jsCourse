@@ -1,47 +1,40 @@
 'use strict';
 
 const calculation = document.querySelector('#calculation')
-const operators = ["+", "-", "*", "/"]
-let mode;
+const result = document.querySelector('#result')
+const button = document.querySelector('#start')
 let number1;
 let number2;
+let sum;
 
 calculation.addEventListener('input', doMath)
+button.onclick = x;
 
+function x() {
+    result.innerHTML = sum
+}
 function doMath() {
     let operus = document.getElementById("calculation").value;
-    let numbers = operus.split('');
-    //let operator = numbers[1]
-
-
-    //SET THE OPERATOR
     if(operus.includes('+')){
-        console.log("Its addition")
-        mode = "+"
+        const parts = operus.split('+')
+        sum = parseInt(parts[0])+parseInt(parts[1])
+        console.log("Sum is: ", sum)
     }
     if(operus.includes('-')){
-        console.log("Its subtraction")
-        mode = '-'
+        const parts = operus.split('-')
+        sum = parseInt(parts[0])-parseInt(parts[1])
+        console.log("Sub is: ", sum)
+       
     }
     if(operus.includes('*')){
-        console.log("Its multiply")
-        mode = '*'
+        const parts = operus.split('*')
+        sum = parseInt(parts[0])*parseInt(parts[1])
+        console.log("Multi is: ", sum)
+       
     }
     if(operus.includes('/')){
-        console.log("Its divide")
-        mode = '/'
-    }
-
-    else if(!operus[1].includes(operators)) {
-
-        number1 = operus[0] + operus[1]
-        console.log(number1)
-    }
-    }
-function find() {
-    let operus = document.getElementById("calculation").value;
-    for(let x in operus) {
-        console.log("loooolol". operus[x])
+        const parts = operus.split('/')
+        sum = parseInt(parts[0])/parseInt(parts[1])
+        console.log("Divided is: ", sum)
     }
 }
-find()
